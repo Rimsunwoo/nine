@@ -26,7 +26,7 @@ const SpecTable: React.FC<SpecTableProps> = ({tableData}) => {
             <tbody>
               {Object.entries(categorySpecs).map(([key, value], entryIndex) => (
                 <tr key={entryIndex}>
-                  <td className="font-semibold">{key}</td>
+                  <td className="font-semibold w-[220px]">{key}</td>
                   <td>{value}</td>
                 </tr>
               ))}

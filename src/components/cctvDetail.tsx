@@ -116,7 +116,12 @@ const model2 = {
   point: [
     'Sony Starvis 1/2.8″ 5.69메가픽셀 CMOS 센서',
     '2.8~12mm 모터라이즈줌 렌즈',
-    '트리플코덱 H.265 / H.264 / MJPEG',
+    '5fps ~ 30fps @ All Resolution',
+    '야간감시거리 20m',
+    'Onvif 지원',
+    'PoE지원',
+    'DC12V, 750mA(Max)',
+    'Options : 메탈 방수 돔',
   ],
   specs: {
     펌웨어: {
@@ -186,6 +191,16 @@ const model3 = {
     '4MP, Ultra Low Light HD IP IR PTZ CAMERA',
     '1/1.8″ 6.48MP Sony STARVIS CMOS Sensor',
     '렌즈사양 : 광학 x36 (F1.5~F4.8, f=6mm~216mm)',
+    '최저조도 : DDS On : 0.0375 Lux @ Color, 0.002 Lux@ B/W',
+    'Day & Night / DE-FOG / 영상 흔들림 보정',
+    '8 프라이버시 마스크 (구면좌표계)',
+    '아날로그 CVBS 출력',
+    'RS-485를 이용한 쉬운 PTZ제어',
+    '2센서 입력 & 1알람 출력',
+    'Intelligent IR LED Control (IR LED 거리 : 350m)',
+    'MAX.30FPS @ All Resolutions',
+    '양방향 오디오 통신',
+    '입력전원 DC 12V, 3.5A',
   ],
   specs: {
     펌웨어: {
