@@ -11,39 +11,40 @@ function CctvDetail({model}: {model: string}) {
   const curData = model === 'NTB-543X' ? model1 : model === 'NTD-543X' ? model2 : model3;
 
   return (
-    <div className="w-full p-5 mx-auto">
-      <div className="mx-auto flex flex-col gap-20 items-center">
+    <div className="px-20">
+      <div className="flex flex-col gap-10 items-center">
         <div className="text-center">
           <h3>{curData.title}</h3>
-          <p className="mt-5">{curData.subtitle}</p>
+          <p className="mt-5 text-lg">{curData.subtitle}</p>
         </div>
-        <div className="flex gap-10 w-full">
+        <div className="border-2 w-full" />
+        <div className="flex gap-20">
           <div className="">
-            <div>
-              <Image className="w-[300px] border-2" src={curData.image} alt={curData.title} />
+            <div className="w-[300px] h-[300px] relative ">
+              <Image className="border-2" src={curData.image} alt={curData.title} fill />
             </div>
             {/* <button className="mt-4 border-[1px] border-black p-2 rounded-lg">카달로그</button> */}
           </div>
           <div className="w-full p-2 flex flex-col gap-4">
-            <p className="text-3xl">{curData.model}</p>
-            <p className="text-xl text-gray-500">{curData.simpleInfo}</p>
+            <p className="text-3xl">모델명 : {curData.model}</p>
+            <p className="text-lg text-gray-500">{curData.simpleInfo}</p>
             <p className="mt-4 text-2xl text-sky-500 font-semibold">제품 특징</p>
             <ul>
               {curData.point.map(el => {
                 return (
-                  <li key={el} className="text-xl text-gray-500">
-                    · {el}
+                  <li key={el} className="text-lg text-gray-500">
+                    - {el}
                   </li>
                 );
               })}
             </ul>
           </div>
         </div>
-      </div>
-      <p className="text-3xl my-10">제품 사양</p>
-      <div className="bg-slate-100 p-4">
-        <SpecTable tableData={[{specs: curData.specs}]} />
-        <div></div>
+        <div className="border-[1px] w-full" />
+        <p className="text-3xl my-10">제품 사양</p>
+        <div className="bg-slate-100 p-4">
+          <SpecTable tableData={[{specs: curData.specs}]} />
+        </div>
       </div>
     </div>
   );

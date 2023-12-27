@@ -1,7 +1,7 @@
 import BroadCastPage from '@/components/broad-cast';
 import CctvPage from '@/components/cctv-page';
-import WhiteBoard from '@/components/company/white-board';
 import Sidebar from '@/components/sidebar';
+import WhiteBoard from '@/components/white-board';
 
 export interface Props {
   params: {
@@ -11,7 +11,7 @@ export interface Props {
 
 function Page({params: {type}}: Props) {
   return (
-    <div className="mt-5">
+    <div className="">
       <Sidebar />
       {type == 'cctv' && <CctvPage />}
       {type == 'broadcast' && <BroadCastPage />}

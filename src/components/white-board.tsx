@@ -12,16 +12,15 @@ export default function WhiteBoard() {
     'https://postfiles.pstatic.net/MjAyMzEyMjdfMjk2/MDAxNzAzNjU3ODAxMTkw.gtog4wWPxoGxcJDZCEm8sjtKB5Z3eTzi6wMpVNouOzsg.LY1pWwOoYPcyeMcX7F3EUjS-IA-TzVJOzZImYPGcmoUg.JPEG.dlatjsdn205/0008.jpg?type=w966',
   ];
   return (
-    <>
-      <div className="flex flex-col items-center">
-        {whiteBoardCatalog.map((url, i) => {
-          return (
-            <div key={i} className="w-[673px] h-[945px] relative">
-              <Image src={url} alt="catalog" fill />
-            </div>
-          );
-        })}
-      </div>
-    </>
+    <div className="w-full flex flex-col items-center gap-10">
+      <h3>White Board</h3>
+      {whiteBoardCatalog.map((url, i) => {
+        return (
+          <div key={i} className="w-[673px] h-[945px] relative">
+            <Image src={url} alt="catalog" fill />
+          </div>
+        );
+      })}
+    </div>
   );
 }

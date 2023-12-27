@@ -1,22 +1,21 @@
-'use client';
-import {useRouter} from 'next/navigation';
+import Link from 'next/link';
 
 function Sidebar() {
-  const route = useRouter();
   return (
-    <ul className="absolute font-bold">
-      <li className="mb-2 hover:bg-gray-200">
-        <button onClick={() => route.push('/products/broadcast')}>BroadCast</button>
-      </li>
-      <li className="mb-2 hover:bg-gray-200">
-        <button onClick={() => route.push('/products/cctv')}>CCTV</button>
-      </li>
-      <li className="mb-2 hover:bg-gray-200">
-        <button onClick={() => route.push('/products/whiteboard')}>WhiteBoard</button>
-      </li>
-    </ul>
+    <div className="fixed translate-y-1/2 border-[2px] border-gray-400 h-fit rounded-xl overflow-hidden">
+      <ul className="text-center">
+        <li className="mb-2 hover:bg-gray-200 p-4 overflow-hidden">
+          <Link href={'/products/broadcast'}>BroadCast</Link>
+        </li>
+        <li className="mb-2 hover:bg-gray-200 p-4">
+          <Link href={'/products/cctv'}>CCTV</Link>
+        </li>
+        <li className="hover:bg-gray-200 p-4">
+          <Link href={'/products/whiteboard'}>WhiteBoard</Link>
+        </li>
+      </ul>
+    </div>
   );
-  return <div className="border-2 border-black w-fit p-20">Sidebar</div>;
 }
 
 export default Sidebar;
