@@ -24,9 +24,9 @@ function page() {
   ];
   return (
     <>
-      <div>
-        <div className="w-36 h-10">
-          <Image src={logo} alt="backToListImg" />
+      <div className="flex gap-2 flex-col items-center mt-3 mb-7">
+        <div className="relative w-52 h-16">
+          <Image src={logo} alt="logo" fill />
         </div>
         <div className="flex gap-4">
           <ul className="flex flex-col gap-2 font-bold">
@@ -41,7 +41,7 @@ function page() {
           </ul>
         </div>
       </div>
-      <ul className="flex gap-7">
+      <ul className="grid grid-cols-2 justify-center">
         {certification.map((a, i) => (
           <Certification key={i} imgSrc={a[1]} name={a[0]} />
         ))}
