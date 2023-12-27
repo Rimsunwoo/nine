@@ -12,17 +12,11 @@ function CctvPage() {
       <h3>제품 소개</h3>
       <div className="flex gap-10 mt-10">
         <div className="grid grid-cols-3 gap-10">
-<<<<<<< Updated upstream
-          <Link href={'/products/productDetail/1'} className="flex flex-col">
+          <Link href={'/products/productDetail/HNB-S528R'} className="flex flex-col">
             <div className="w-[300px] h-[300px] relative text-center">
               <Image src={불렛카메라} alt="bullet" fill />
             </div>
-            <p className="text-xl text-center">HNB-S528R</p>
-=======
-          <Link href={'/products/productDetail/HNB-S528R'} className="flex flex-col">
-            <div className="w-[300px] h-[300px] bg-slate-400 text-center">image</div>
             <p className="text-xl">HNB-S528R</p>
->>>>>>> Stashed changes
           </Link>
           <Link href={'/products/productDetail/2'} className="flex flex-col">
             <div className="w-[300px] h-[300px] relative text-center">
