@@ -1,7 +1,18 @@
-import React from 'react';
+import CctvPage from '@/components/cctv-page';
 
-function page() {
-  return <div>방송, 칠판 제품 소개</div>;
+export interface Props {
+  params: {
+    type: string;
+  };
 }
 
-export default page;
+function Page({params: {type}}: Props) {
+  return (
+    <div>
+      {type}
+      <CctvPage />
+    </div>
+  );
+}
+
+export default Page;

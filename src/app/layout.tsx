@@ -18,7 +18,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     <html lang="ko">
       <body className={inter.className}>
         <Header />
-        {children}
+        <div className="w-[1400px] mx-auto">{children}</div>
       </body>
     </html>
   );
