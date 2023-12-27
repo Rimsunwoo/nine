@@ -1,4 +1,3 @@
-// specTable.tsx
 import React from 'react';
 
 interface TableDataItem {
