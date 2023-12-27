@@ -1,19 +1,24 @@
 import Link from 'next/link';
 
-function Sidebar() {
+const nav = ['BroadCast', 'CCTV', 'WhiteBoard'];
+
+function Sidebar({type}: {type: string}) {
   return (
-    <div className="fixed translate-y-1/2 border-[2px] border-gray-400 h-fit rounded-xl overflow-hidden">
-      <ul className="text-center">
-        <li className="mb-2 hover:bg-gray-200 p-4 overflow-hidden">
-          <Link href={'/products/broadcast'}>BroadCast</Link>
-        </li>
-        <li className="mb-2 hover:bg-gray-200 p-4">
-          <Link href={'/products/cctv'}>CCTV</Link>
-        </li>
-        <li className="hover:bg-gray-200 p-4">
-          <Link href={'/products/whiteboard'}>WhiteBoard</Link>
-        </li>
-      </ul>
+    <div className="fixed left-[10%] translate-y-1/2 border-[2px] border-gray-400 h-fit rounded-xl overflow-hidden">
+      <nav className="flex flex-col text-center">
+        {nav.map(category => {
+          return (
+            <Link
+              href={`/products/${category.toLowerCase()}`}
+              key={category}
+              className={`hover:bg-gray-200 p-4 w-full text-gray-500 ${
+                type === category.toLowerCase() && 'text-black font-semibold'
+              }`}>
+              {category}
+            </Link>
+          );
+        })}
+      </nav>
     </div>
   );
 }

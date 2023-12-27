@@ -11,8 +11,8 @@ export interface Props {
 
 function Page({params: {type}}: Props) {
   return (
-    <div className="relative px-40">
-      <Sidebar />
+    <div className="px-40">
+      <Sidebar type={type} />
       {type == 'cctv' && <CctvPage />}
       {type == 'broadcast' && <BroadCastPage />}
       {type == 'whiteboard' && <WhiteBoard />}

@@ -18,14 +18,12 @@ function CctvPage() {
     <div className="flex flex-col items-center justify-center w-full">
       <h3>CCTV</h3>
       <div className="flex gap-10 mt-10">
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 gap-20 xl:grid-cols-3 md:grid-cols-2">
           {items.map(item => {
             return (
               <div key={item.model} className="text-center">
-                <Link
-                  href={'/products/productDetail/NTB-543X'}
-                  className="flex flex-col text-center border-[2px] rounded-xl">
-                  <div className="w-[300px] h-[300px] relative ">
+                <Link href={`/products/productDetail/${item.model}`} className="flex flex-col">
+                  <div className="w-[250px] h-[250px] relative border-[2px] rounded-xl bg-white">
                     <Image src={item.img} alt="bullet" fill />
                   </div>
                 </Link>
