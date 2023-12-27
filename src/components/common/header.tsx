@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 
@@ -16,7 +17,10 @@ import DropDown from './dropDown';
 function Header() {
   const location = usePathname();
   return (
-    <div className="h-20 border-2 border-b-black flex justify-center items-center">
+    <div className="h-20 border-2 border-b-black flex justify-evenly items-center">
+      <div className="w-28 h-9 relative">
+        <Image src={logo} className="object-cover" fill alt="logo" />
+      </div>
       <div className="flex gap-4">
         <Link href={'/'} key={'home'}>
           <h4 className={`font-normal ${location === '/' && 'border-b-[2px] border-black'}`}>{'홈'}</h4>
