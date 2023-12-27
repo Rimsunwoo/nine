@@ -6,7 +6,7 @@ import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 
 import DropDown from './dropDown';
-
+import logo from '../../../public/logo.svg';
 // const menu = [
 //   ['홈', '/'],
 //   ['기업소개', '/company'],
