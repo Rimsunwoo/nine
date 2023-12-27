@@ -23,9 +23,7 @@ const items: MenuProps['items'] = [
 const DropDown = ({location}: {location: string}) => (
   <Dropdown menu={{items}} placement="bottom">
     <button>
-      <h4 className={`font-normal border-b-[2px] ${location.includes('products') && 'border-b-[2px] border-sky-500'}`}>
-        제품 소개
-      </h4>
+      <h4 className={`font-normal ${location.includes('products') && 'border-b-[2px] border-sky-500'}`}>제품 소개</h4>
     </button>
   </Dropdown>
 );
