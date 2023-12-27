@@ -12,23 +12,23 @@ function CctvPage() {
       <h3>제품 소개</h3>
       <div className="flex gap-10 mt-10">
         <div className="grid grid-cols-3 gap-10">
-          <Link href={'/products/productDetail/HNB-S528R'} className="flex flex-col">
-            <div className="w-[300px] h-[300px] relative text-center">
+          <Link href={'/products/productDetail/NTB-543X'} className="flex flex-col text-center">
+            <div className="w-[300px] h-[300px] relative ">
               <Image src={불렛카메라} alt="bullet" fill />
             </div>
-            <p className="text-xl">HNB-S528R</p>
+            <p className="text-xl">NTB-543X</p>
           </Link>
-          <Link href={'/products/productDetail/2'} className="flex flex-col">
+          <Link href={'/products/productDetail/NTD-543X'} className="flex flex-col text-center">
             <div className="w-[300px] h-[300px] relative text-center">
               <Image src={돔카메라} alt="dom" fill />
             </div>
-            <p className="text-xl text-center">HND-528R</p>
+            <p className="text-xl text-center">NTD-543X</p>
           </Link>
-          <Link href={'/products/productDetail/3'} className="flex flex-col">
+          <Link href={'/products/productDetail/NTPTZ-436X'} className="flex flex-col text-center">
             <div className="w-[300px] h-[300px] relative text-center">
               <Image src={스피드돔} alt="speed-dom" fill />
             </div>
-            <p className="text-xl text-center">HNP-436SR</p>
+            <p className="text-xl text-center">NTPTZ-436X</p>
           </Link>
         </div>
       </div>
