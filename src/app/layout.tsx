@@ -25,7 +25,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     <html lang="ko">
       <body className={`${notoSansKr.className} ${montserrat.variable}`}>
         <Header />
-        <div className="w-[95%] mx-auto lg:w-[85%] mt-20">{children}</div>
+        <div className="w-[95%] mx-auto lg:w-[85%] mt-40">{children}</div>
       </body>
     </html>
   );

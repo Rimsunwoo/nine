@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 import SpecTable from './specTable';
 import 돔카메라 from '../../public/돔카메라.png';
@@ -12,20 +13,22 @@ function CctvDetail({model}: {model: string}) {
 
   return (
     <div className="px-20">
-      <div className="flex flex-col gap-10 items-center">
-        <div className="text-center">
+      <div className="flex flex-col gap-10 items-center px-20">
+        <div className="text-center w-full pb-4 border-b-[2px]">
           <h3>{curData.title}</h3>
-          <p className="mt-5 text-lg">{curData.subtitle}</p>
+          <p className="text-lg mt-4">{curData.subtitle}</p>
+          <Link href={'/products/cctv'} className="rounded-md p-2 bg-[#CA5C75] text-white flex justify-start w-fit">
+            ← 목록
+          </Link>
         </div>
-        <div className="border-2 w-full" />
-        <div className="flex gap-20">
-          <div className="">
-            <div className="w-[300px] h-[300px] relative ">
+        <div className="flex gap-20 my-10">
+          <div className="p-2">
+            <div className="w-[300px] h-[300px] relative">
               <Image className="border-2" src={curData.image} alt={curData.title} fill />
             </div>
             {/* <button className="mt-4 border-[1px] border-black p-2 rounded-lg">카달로그</button> */}
           </div>
-          <div className="w-full p-2 flex flex-col gap-4">
+          <div className="w-full flex flex-col gap-4">
             <p className="text-3xl">모델명 : {curData.model}</p>
             <p className="text-lg text-gray-500">{curData.simpleInfo}</p>
             <p className="mt-4 text-2xl text-sky-500 font-semibold">제품 특징</p>
@@ -53,7 +56,7 @@ function CctvDetail({model}: {model: string}) {
 export default CctvDetail;
 
 const model1 = {
-  title: '뷸렛 카메라',
+  title: '불렛 카메라',
   subtitle: '쉽게 설치가 가능하며 야간식별이 가능한 LED 일체형 초고화질 카메라',
   model: 'NTB-543X',
   simpleInfo: '5MP, H.265, 2.8~12mm, 광학 4.3배 AF 모터 줌, SONY QHD IP IR BULLET CAMERA',
