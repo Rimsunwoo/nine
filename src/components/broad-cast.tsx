@@ -19,7 +19,7 @@ export default function BroadCastPage() {
   ];
   return (
     <div className="w-full flex flex-col items-center gap-10">
-      <h3>Broad Cast</h3>
+      <h2 className="">Broad Cast</h2>
       {catalog.map((url, i) => {
         return (
           <div key={i} className="w-[673px] h-[945px] relative">

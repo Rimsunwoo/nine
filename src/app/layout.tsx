@@ -1,4 +1,5 @@
-import {Montserrat, Noto_Sans_KR} from 'next/font/google';
+import {Montserrat} from 'next/font/google';
+import localFont from 'next/font/local';
 
 import Header from '@/components/common/header';
 
@@ -7,8 +8,9 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 // const inter = Inter({subsets: ['latin']});
-const notoSansKr = Noto_Sans_KR({
-  subsets: ['latin'],
+const myFont = localFont({
+  src: './fonts/PretendardVariable.woff2',
+  display: 'swap',
 });
 
 const montserrat = Montserrat({subsets: ['latin'], display: 'swap', variable: '--font-montserrat'});
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="ko">
-      <body className={`${notoSansKr.className} ${montserrat.variable}`}>
+      <body className={`${myFont.className} ${montserrat.variable}`}>
         <Header />
         <div className="w-[90%] mx-auto lg:w-[80%] mt-40 flex-1">{children}</div>
         {/* <Footer /> */}

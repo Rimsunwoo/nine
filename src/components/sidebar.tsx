@@ -1,21 +1,25 @@
+import {Fragment} from 'react';
+
 import Link from 'next/link';
 
 const nav = ['BroadCast', 'CCTV', 'WhiteBoard'];
 
 function Sidebar({type}: {type: string}) {
   return (
-    <div className="fixed left-[10%] translate-y-1/2 border-[2px] border-gray-400 h-fit rounded-xl overflow-hidden">
+    <div className="fixed left-[10%] top-1/2 -translate-y-1/2 h-fit overflow-hidden w-52">
       <nav className="flex flex-col text-center">
-        {nav.map(category => {
+        {nav.map((category, index) => {
           return (
-            <Link
-              href={`/products/${category.toLowerCase()}`}
-              key={category}
-              className={`hover:bg-gray-200 p-4 w-full text-gray-500 ${
-                type === category.toLowerCase() && 'text-black font-semibold'
-              }`}>
-              {category}
-            </Link>
+            <Fragment key={category}>
+              <Link
+                href={`/products/${category.toLowerCase()}`}
+                className={`hover:text-primary py-5 roun w-full text-gray-500 ${
+                  type === category.toLowerCase() && 'font-semibold text-primary'
+                }`}>
+                {category}
+              </Link>
+              {index < nav.length - 1 && <div className="w-36 h-[1px] bg-slate-400 mx-auto" />}
+            </Fragment>
           );
         })}
       </nav>
