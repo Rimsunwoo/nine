@@ -33,6 +33,7 @@ const config: Config = {
         primary: '#004EEB',
         hover_primary: 'rgba(0, 78, 235, 0.6)',
         logo_color: '#CA5C75',
+        sub_color: 'rgba(218, 121, 161)',
       },
     },
   },
