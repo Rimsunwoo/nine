@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import DownLoadBtn from './common/downLoadBtn';
 import SpecTable from './specTable';
 import 돔카메라 from '../../public/돔카메라.png';
 import 불렛카메라 from '../../public/불렛카메라.png';
@@ -27,7 +28,7 @@ function CctvDetail({model}: {model: string}) {
           <p className="text-lg">{curData.subtitle}</p>
         </div>
         <div className="flex gap-20 my-10">
-          <div className="p-2">
+          <div className="p-2 flex flex-col items-center">
             <div className="w-[400px] h-[400px] relative">
               <Image className="border-2" src={curData.image} alt={curData.title} fill />
               <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
@@ -44,7 +45,13 @@ function CctvDetail({model}: {model: string}) {
                 })}
               </div>
             </div>
-            <button className="mt-4 border-[1px] border-black p-2 rounded-lg">카탈로그</button>
+            <div className="mt-4">
+              <DownLoadBtn>
+                <a href={`/${curData.model}.pdf`} download>
+                  카달로그 다운로드
+                </a>
+              </DownLoadBtn>
+            </div>
           </div>
           <div className="w-full flex flex-col gap-2">
             <p className="text-3xl">모델명 : {curData.model}</p>
