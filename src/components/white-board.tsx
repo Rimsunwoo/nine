@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import DownLoadBtn from './common/downLoadBtn';
+
 export default function WhiteBoard() {
   const whiteBoardCatalog = [
     'https://postfiles.pstatic.net/MjAyMzEyMjdfMjg0/MDAxNzAzNjU3NzgzMTM3.06fTVLAzgvHE9_aLWmmcMF4kAJv77IYN4QCtEVcJcYcg.oCCUX_5swgPi49E1bvUw3dR4dv1VOZDyIEV3YdPZGHMg.JPEG.dlatjsdn205/0001.jpg?type=w966',
@@ -14,6 +16,11 @@ export default function WhiteBoard() {
   return (
     <div className="w-full flex flex-col items-center gap-10">
       <h3>White Board</h3>
+      <DownLoadBtn>
+        <a href="/나인-전자칠판카달로그.pdf" download>
+          카달로그 다운로드
+        </a>
+      </DownLoadBtn>
       {whiteBoardCatalog.map((url, i) => {
         return (
           <div key={i} className="w-[673px] h-[945px] relative">
