@@ -31,6 +31,8 @@ const config: Config = {
       },
       colors: {
         primary: '#004EEB',
+        hover_primary: 'rgba(0, 78, 235, 0.6)',
+        logo_color: '#CA5C75',
       },
     },
   },
