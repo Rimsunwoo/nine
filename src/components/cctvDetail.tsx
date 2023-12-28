@@ -27,7 +27,7 @@ function CctvDetail({model}: {model: string}) {
           </div>
           <p className="text-lg">{curData.subtitle}</p>
         </div>
-        <div className="flex gap-20 my-10">
+        <div className="flex flex-col gap-20 my-10 lg:flex-row">
           <div className="p-2 flex flex-col items-center">
             <div className="w-[400px] h-[400px] relative">
               <Image className="border-2" src={curData.image} alt={curData.title} fill />

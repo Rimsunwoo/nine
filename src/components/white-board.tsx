@@ -23,7 +23,7 @@ export default function WhiteBoard() {
       </DownLoadBtn>
       {whiteBoardCatalog.map((url, i) => {
         return (
-          <div key={i} className="w-[673px] h-[945px] relative">
+          <div key={i} className="w-[42rem] h-[59rem] relative">
             <Image src={url} alt="catalog" fill />
           </div>
         );
