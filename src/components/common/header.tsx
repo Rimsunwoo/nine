@@ -17,6 +17,7 @@ import logo from '../../../public/logo.svg';
 
 function Header() {
   const location = usePathname();
+  if (location === '/') return;
   return (
     <div className="fixed left-0 top-0 w-full h-28 flex justify-evenly items-center bg-white z-10 shadow-[0_1px_4px_0_rgba(53,60,73,0.08)]">
       <Link href={'/'} className="w-28 h-9 relative">
