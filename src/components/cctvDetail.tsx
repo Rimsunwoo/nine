@@ -10,28 +10,46 @@ import 스피드돔카메라 from '../../public/스피드돔.png';
 
 function CctvDetail({model}: {model: string}) {
   const curData = model === 'NTB-543X' ? model1 : model === 'NTD-543X' ? model2 : model3;
+  // const curData = CCTVData.find(cctv => cctv.model === model)!;
 
   return (
     <div className="px-20">
-      <div className="flex flex-col gap-10 items-center px-20">
-        <div className="text-center w-full pb-4 border-b-[2px]">
-          <h3>{curData.title}</h3>
-          <p className="text-lg mt-4">{curData.subtitle}</p>
-          <Link href={'/products/cctv'} className="rounded-md p-2 bg-[#CA5C75] text-white flex justify-start w-fit">
-            ← 목록
-          </Link>
+      <div className="flex flex-col items-center px-20">
+        <div className="text-center w-full pb-4 border-b-[2px] mb-10">
+          <h2 className="font-semibold">{curData.title}</h2>
+          <div className="flex justify-start w-full">
+            <Link
+              href={'/products/cctv'}
+              className="rounded-md p-2 px-4 bg-primary text-white w-fit hover:bg-hover_primary">
+              ← 목록
+            </Link>
+          </div>
+          <p className="text-lg">{curData.subtitle}</p>
         </div>
         <div className="flex gap-20 my-10">
           <div className="p-2">
-            <div className="w-[300px] h-[300px] relative">
+            <div className="w-[400px] h-[400px] relative">
               <Image className="border-2" src={curData.image} alt={curData.title} fill />
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
+                {curData.info_boxs.map((keyword, i) => {
+                  return (
+                    <div
+                      className={` rounded-md w-20 text-center p-[3px] shadow-[0_7px_5px_0_rgba(53,60,73,0.08)] border-[2px] border-white ${
+                        i === 0 ? 'bg-sky-500' : 'bg-logo_color'
+                      }`}
+                      key={keyword}>
+                      <p className=" text-white font-bold text-xl text-center">{keyword}</p>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-            {/* <button className="mt-4 border-[1px] border-black p-2 rounded-lg">카달로그</button> */}
+            <button className="mt-4 border-[1px] border-black p-2 rounded-lg">카탈로그</button>
           </div>
-          <div className="w-full flex flex-col gap-4">
+          <div className="w-full flex flex-col gap-2">
             <p className="text-3xl">모델명 : {curData.model}</p>
             <p className="text-lg text-gray-500">{curData.simpleInfo}</p>
-            <p className="mt-4 text-2xl text-sky-500 font-semibold">제품 특징</p>
+            <p className="mt-4 text-2xl text-primary font-semibold">제품 특징</p>
             <ul>
               {curData.point.map(el => {
                 return (
@@ -43,7 +61,7 @@ function CctvDetail({model}: {model: string}) {
             </ul>
           </div>
         </div>
-        <div className="border-[1px] w-full" />
+        <div className="border-[1px] w-full mt-10 mb-10" />
         <p className="text-3xl my-10">제품 사양</p>
         <div className="bg-slate-100 p-4">
           <SpecTable tableData={[{specs: curData.specs}]} />
@@ -58,9 +76,11 @@ export default CctvDetail;
 const model1 = {
   title: '불렛 카메라',
   subtitle: '쉽게 설치가 가능하며 야간식별이 가능한 LED 일체형 초고화질 카메라',
+  simpleText: '5MP 4.3배 줌 네트워크 IR 불렛카메라',
   model: 'NTB-543X',
   simpleInfo: '5MP, H.265, 2.8~12mm, 광학 4.3배 AF 모터 줌, SONY QHD IP IR BULLET CAMERA',
   image: 불렛카메라,
+  info_boxs: ['5MP', '4.3x', 'IR'],
   point: [
     '5MP QHD IP IR BULLET CAMERA',
     '야간 감시거리 : 40m (@0.0Lux)',
@@ -114,9 +134,11 @@ const model1 = {
 const model2 = {
   title: '돔 카메라',
   subtitle: '360˚ 영상 펼침모드로 공간의 전체를 감시하는 네트워크 카메라',
+  simpleText: '5MP 4.3배 줌 네트워크 IR 돔카메라',
   model: 'NTD-543X',
   simpleInfo: '5MP, 2.8~12mm AF 모터줌, 1/2.8″ Sony Starvis 네트워크 적외선 돔 카메라',
   image: 돔카메라,
+  info_boxs: ['5MP', '4.3x', 'IR'],
   point: [
     'Sony Starvis 1/2.8″ 5.69메가픽셀 CMOS 센서',
     '2.8~12mm 모터라이즈줌 렌즈',
@@ -187,10 +209,12 @@ const model2 = {
 
 const model3 = {
   title: '스피드 돔 카메라',
+  simpleText: '4MP 36배 줌 네트워크 IR PTZ카메라',
   subtitle: '36배줌 PTZ 카메라에 차번 인식기능이 결합된 하이브리드 카메라',
   model: 'NTPTZ-436X',
   simpleInfo: '4MP , H.265 , 광학 36배 줌 , 1/1.8″ Ultra Low Light HD IP IR PTZ CAMERA',
   image: 스피드돔카메라,
+  info_boxs: ['4MP', '36x', '1/1.8"', '350M'],
   point: [
     '4MP, Ultra Low Light HD IP IR PTZ CAMERA',
     '1/1.8″ 6.48MP Sony STARVIS CMOS Sensor',
@@ -271,3 +295,5 @@ const model3 = {
     },
   },
 };
+
+export const CCTV_DATA = [model1, model2, model3];

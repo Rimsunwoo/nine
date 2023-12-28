@@ -20,12 +20,16 @@ const items: MenuProps['items'] = [
   },
 ];
 
-const DropDown = ({location}: {location: string}) => (
-  <Dropdown menu={{items}} placement="bottom">
-    <button>
-      <h4 className={`font-normal ${location.includes('products') && 'border-b-[2px] border-sky-500'}`}>제품 소개</h4>
-    </button>
-  </Dropdown>
-);
+const DropDown = ({location}: {location: string}) => {
+  return (
+    <Dropdown menu={{items}} placement="bottom">
+      <button className={`${location.includes('products') && 'border-b-[2px] border-primary'}`}>
+        <h5 className={`font-normal p-2 border-b-[2px] border-white ${location.includes('products') && 'border-none'}`}>
+          제품 소개
+        </h5>
+      </button>
+    </Dropdown>
+  );
+};
 
 export default DropDown;

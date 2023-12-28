@@ -29,6 +29,11 @@ const config: Config = {
         bold: '700',
         bolder: '800',
       },
+      colors: {
+        primary: '#004EEB',
+        hover_primary: 'rgba(0, 78, 235, 0.6)',
+        logo_color: '#CA5C75',
+      },
     },
   },
   plugins: [],
