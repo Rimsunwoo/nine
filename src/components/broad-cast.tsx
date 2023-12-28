@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import DownLoadBtn from './common/downLoadBtn';
+
 export default function BroadCastPage() {
   const catalog = [
     'https://postfiles.pstatic.net/MjAyMzEyMjdfMjM5/MDAxNzAzNjU1NzU5NzA1.60Bt5V0G6yhQyH3d4BR4HtgMHWZ0qZ0nsoSotKYpOn8g.J6WPmK4YJkxUbWp6tVHc-VXSzfsLZk4Jkq7Hyv6c5XQg.JPEG.dlatjsdn205/%EC%A3%BC)%EB%82%98%EC%9D%B8_%EB%B0%A9%EC%86%A1%EC%B9%B4%EB%8B%AC%EB%A1%9C%EA%B7%B8_%EC%B5%9C%EC%A2%85_page-0002.jpg?type=w966',
@@ -19,7 +21,13 @@ export default function BroadCastPage() {
   ];
   return (
     <div className="w-full flex flex-col items-center gap-10">
-      <h2 className="">Broad Cast</h2>
+      <h3>Broad Cast</h3>
+
+      <DownLoadBtn>
+        <a href="/나인-브로드캐스트카달로그.pdf" download>
+          카달로그 다운로드
+        </a>
+      </DownLoadBtn>
       {catalog.map((url, i) => {
         return (
           <div key={i} className="w-[673px] h-[945px] relative">
