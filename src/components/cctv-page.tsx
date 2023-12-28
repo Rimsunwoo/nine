@@ -16,8 +16,8 @@ const items = [
 function CctvPage() {
   return (
     <div className="flex flex-col items-center justify-center w-full">
-      <h3>CCTV</h3>
-      <div className="flex gap-10 mt-10">
+      <h2>CCTV</h2>
+      <div className="flex gap-10 mt-40">
         <div className="grid grid-cols-1 gap-20 xl:grid-cols-3 md:grid-cols-2">
           {items.map(item => {
             return (

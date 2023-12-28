@@ -29,6 +29,9 @@ const config: Config = {
         bold: '700',
         bolder: '800',
       },
+      colors: {
+        primary: '#004EEB',
+      },
     },
   },
   plugins: [],
