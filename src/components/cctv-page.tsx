@@ -10,12 +10,12 @@ function CctvPage() {
     <div className="flex flex-col items-center justify-center w-full">
       <h2 className="font-semibold">CCTV</h2>
       <div className="flex gap-10 mt-12 border-t-2 pt-28">
-        <div className="grid grid-cols-1 gap-20 xl:grid-cols-3 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-20 2xl:grid-cols-3 lg:grid-cols-2">
           {CCTV_DATA.map(item => {
             return (
               <div key={item.model} className="text-center">
                 <Link href={`/products/productDetail/${item.model}`} className="flex flex-col">
-                  <div className="w-[300px] h-[300px] relative border-[2px] bg-white hover:border-sky-500">
+                  <div className="w-80 h-80 relative border-[2px] bg-white hover:border-sky-500">
                     <Image src={item.image} alt="bullet" fill />
                     <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
                       {item.info_boxs.map((keyword, i) => {
