@@ -28,7 +28,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     <html lang="ko">
       <body className={`${myFont.className} ${montserrat.variable} `}>
         <Header />
-        <div className="w-[95%] mx-auto xl:w-[80%]  mt-40  min-h-[80vh]">{children}</div>
+        <div className="w-full md:w-[90%] mx-auto xl:w-[80%] mt-40 min-h-[80vh]">{children}</div>
         <Footer />
       </body>
     </html>
