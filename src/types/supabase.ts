@@ -34,7 +34,36 @@ export interface Database {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      post: {
+        Row: {
+          category: string | null
+          content: string | null
+          created_at: string
+          id: string
+          images: string[] | null
+          thumbnail: string | null
+          title: string | null
+        }
+        Insert: {
+          category?: string | null
+          content?: string | null
+          created_at?: string
+          id?: string
+          images?: string[] | null
+          thumbnail?: string | null
+          title?: string | null
+        }
+        Update: {
+          category?: string | null
+          content?: string | null
+          created_at?: string
+          id?: string
+          images?: string[] | null
+          thumbnail?: string | null
+          title?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
