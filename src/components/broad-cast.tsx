@@ -22,18 +22,13 @@ export default function BroadCastPage() {
   return (
     <div className="w-full flex flex-col items-center gap-10">
       <h3>Broad Cast</h3>
-
       <DownLoadBtn>
         <a href="/나인-브로드캐스트카달로그.pdf" download>
           카달로그 다운로드
         </a>
       </DownLoadBtn>
-      {catalog.map((url, i) => {
-        return (
-          <div key={i} className="w-[42rem] h-[59rem] relative">
-            <Image src={url} alt="catalog" fill />
-          </div>
-        );
+      {catalog.map(url => {
+        return <Image key={url} src={url} alt="catalog" width={0} height={0} sizes="100%" style={{width: '100%'}} />;
       })}
     </div>
   );

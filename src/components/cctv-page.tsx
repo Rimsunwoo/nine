@@ -9,23 +9,25 @@ function CctvPage() {
   return (
     <div className="flex flex-col items-center justify-center w-full">
       <h2 className="font-semibold">CCTV</h2>
-      <div className="flex gap-10 mt-12 border-t-2 pt-28">
-        <div className="grid grid-cols-1 gap-20 2xl:grid-cols-3 lg:grid-cols-2">
+      <div className="flex gap-10 mt-12 border-t-2 pt-24 w-full justify-center">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 2xl:grid-cols-3 w-full">
           {CCTV_DATA.map(item => {
             return (
               <div key={item.model} className="text-center">
                 <Link href={`/products/productDetail/${item.model}`} className="flex flex-col">
-                  <div className="w-80 h-80 relative border-[2px] bg-white hover:border-sky-500">
-                    <Image src={item.image} alt="bullet" fill />
-                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
+                  <div className="w-full max-w-[500px] p-2 mx-auto relative border-[2px] bg-white hover:border-sky-500">
+                    <Image src={item.image} alt="CCTV" width={0} height={0} sizes="100%" style={{width: '100%'}} />
+                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1 px-2">
                       {item.info_boxs.map((keyword, i) => {
                         return (
                           <div
-                            className={` rounded-md w-16 text-center p-[3px] shadow-[0_7px_5px_0_rgba(53,60,73,0.08)] border-[2px] border-white ${
+                            className={`rounded-md w-full text-center shadow-[0_7px_5px_0_rgba(53,60,73,0.08)] border-[2px] border-white ${
                               i === 0 ? 'bg-sky-500' : 'bg-logo_color'
                             }`}
                             key={keyword}>
-                            <p className=" text-white font-bold text-lg text-center">{keyword}</p>
+                            <p className=" text-white font-bold text-center p-[4px] px-2 text-xl 2xl:text-lg ">
+                              {keyword}
+                            </p>
                           </div>
                         );
                       })}
