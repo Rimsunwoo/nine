@@ -15,7 +15,7 @@ const SpecTable: React.FC<SpecTableProps> = ({tableData}) => {
     }
 
     return tableData.map((rowData, rowIndex) => (
-      <div key={rowIndex} className="mb-4">
+      <div key={rowIndex} className="mb-4 p-2">
         {Object.entries(rowData.specs).map(([category, categorySpecs], columnIndex) => (
           <table key={`${rowIndex}-${columnIndex}`} className="table mb-4">
             <thead>
@@ -26,8 +26,8 @@ const SpecTable: React.FC<SpecTableProps> = ({tableData}) => {
             <tbody>
               {Object.entries(categorySpecs).map(([key, value], entryIndex) => (
                 <tr key={entryIndex}>
-                  <td className="font-semibold w-[220px]">{key}</td>
-                  <td>{value}</td>
+                  <td className="font-semibold w-32 md:w-48 break-keep">{key}</td>
+                  <td className="break-all">{value}</td>
                 </tr>
               ))}
             </tbody>
