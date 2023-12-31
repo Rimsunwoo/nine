@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import React, {useState} from 'react';
 
@@ -5,7 +6,7 @@ import {PlusOutlined} from '@ant-design/icons';
 import {message, Modal, Upload} from 'antd';
 import {v4} from 'uuid';
 
-import {uploadImg} from '@/api/admin';
+import {getPostImgUrl, uploadImg} from '@/api/admin';
 
 import type {RcFile, UploadProps} from 'antd/es/upload';
 import type {UploadFile} from 'antd/es/upload/interface';
@@ -32,7 +33,7 @@ const beforeUpload = (file: File): Promise<string> => {
   });
 };
 
-function UploadBox() {
+export function UploadBox({images}: {images: string[]}) {
   const [previewOpen, setPreviewOpen] = useState(false);
   const [previewImage, setPreviewImage] = useState('');
   const [previewTitle, setPreviewTitle] = useState('');
@@ -50,16 +51,18 @@ function UploadBox() {
     setPreviewTitle(file.name || file.url!.substring(file.url!.lastIndexOf('/') + 1));
   };
 
-  const handleChange: UploadProps['onChange'] = ({fileList: newFileList}) => setFileList(newFileList);
-
   const handleFileUpload = async ({file, onSuccess}: any) => {
+    const imgName = v4();
     const img = {
-      imgName: v4(),
+      imgName,
       imgFile: file,
     };
     await uploadImg(img);
     onSuccess();
+    images.push(getPostImgUrl(imgName));
   };
+
+  const handleChange: UploadProps['onChange'] = ({fileList: newFileList}) => setFileList(newFileList);
 
   const uploadButton = (
     <div>
@@ -69,7 +72,7 @@ function UploadBox() {
   );
 
   return (
-    <div className="w-full mx-auto">
+    <>
       <Upload
         customRequest={handleFileUpload}
         listType="picture-card"
@@ -79,14 +82,13 @@ function UploadBox() {
         multiple
         maxCount={10}
         accept="image/*"
-        beforeUpload={beforeUpload}
-        className="w-full">
+        beforeUpload={beforeUpload}>
         {fileList.length >= 10 ? null : uploadButton}
       </Upload>
       <Modal open={previewOpen} title={previewTitle} footer={null} onCancel={handleCancel}>
         <img alt="example" style={{width: '100%'}} src={previewImage} />
       </Modal>
-    </div>
+    </>
   );
 }
 

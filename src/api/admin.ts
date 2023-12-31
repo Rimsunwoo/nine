@@ -37,3 +37,8 @@ export const uploadImg = async ({ imgName, imgFile }: { imgName: string; imgFile
     throw error;
   }
 };
+
+export const getPostImgUrl = (imgName: string) => {
+  const { data } = supabase.storage.from('post_images').getPublicUrl(`img/${imgName}`);
+  return data.publicUrl;
+};
