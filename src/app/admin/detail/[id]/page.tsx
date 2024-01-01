@@ -18,7 +18,7 @@ async function Page({params: {id}}: {params: {id: string}}) {
       <div className="flex flex-col gap-4 w-full relative">
         <div className="flex justify-start items-center border-b-2 pb-10 mb-10 p-1">
           <Link
-            href={'/exampleBoard'}
+            href={'/admin'}
             className="rounded-md p-2 px-4 bg-slate-500 text-white hover:bg-hover_primary border-b-2 ">
             ← 목록
           </Link>

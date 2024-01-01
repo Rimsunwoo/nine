@@ -3,19 +3,17 @@ import {useEffect, useState} from 'react';
 import {Skeleton} from 'antd';
 import Link from 'next/link';
 
-import {getPost} from '@/api/admin';
+import {getPosts} from '@/app/api/admin';
 
 import DeleteBtn from './deleteBtn';
 
-import type {Tables} from '@/types/supabase';
-
 function AdminPage() {
-  const [data, setData] = useState<null | Tables<'post'>[]>(null);
+  const [data, setData] = useState<any>(null);
   const [updated, setUpdated] = useState(false);
 
   useEffect(() => {
     (async function () {
-      setData(await getPost());
+      setData(await getPosts());
     })();
   }, [updated]);
 
@@ -30,11 +28,14 @@ function AdminPage() {
         </Link>
       </div>
       <div className="w-full text-xl">[게시글 목록]</div>
-      <ul className="flex flex-col gap-4 w-full">
+      <div className="flex flex-col gap-4 w-full">
         {data ? (
-          data.map(post => {
+          data.map((post: any) => {
             return (
-              <li key={post.id} className="border-[1px] border-black p-4 rounded-md  relative">
+              <Link
+                key={post.id}
+                href={`/admin/detail/${post.id}`}
+                className="border-[1px] border-black p-4 rounded-md  relative">
                 <p className="text-lg mb-2">
                   제목 : <span>{post.title}</span>
                 </p>
@@ -47,7 +48,7 @@ function AdminPage() {
                   </p>
                 </div>
                 <DeleteBtn id={post.id} setUpdated={setUpdated} />
-              </li>
+              </Link>
             );
           })
         ) : (
@@ -57,7 +58,7 @@ function AdminPage() {
             <Skeleton />
           </>
         )}
-      </ul>
+      </div>
     </div>
   );
 }

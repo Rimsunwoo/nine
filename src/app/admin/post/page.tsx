@@ -5,7 +5,7 @@ import React, {useState} from 'react';
 import Link from 'next/link';
 import {useRouter} from 'next/navigation';
 
-import {postPost} from '@/api/admin';
+import {postPost} from '@/app/api/admin';
 import useCheckAdmin from '@/components/admin/useCheckAdmin';
 import SelectBox from '@/components/post/selectBox';
 import UploadBox from '@/components/post/uploadBox';

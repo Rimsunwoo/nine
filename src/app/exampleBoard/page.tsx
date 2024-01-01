@@ -17,12 +17,13 @@ async function Page({searchParams}: IPagination) {
 
   return (
     <>
-      <div className="flex flex-col items-center gap-[4rem] mb-20">
-        <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 mt-20 gap-x-8 gap-y-1">
+      <div className="flex flex-col items-center mb-20">
+        <h2 className="font-semibold">설치 사례</h2>
+        <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 mt-16 gap-x-8 gap-y-1 border-t-2 pt-24">
           {postPaginationData.data?.map(item => (
-            <div className="relative min-w-[280px]" key={item.id}>
-              <Link href={`/exampleBoard/detail/${item.id}`} className="flex flex-col w-72">
-                <div className="bg-sub2 rounded-t-lg text-center relative h-[250px] min-w-[280px] overflow-auto">
+            <div className="relative" key={item.id}>
+              <Link href={`/exampleBoard/detail/${item.id}`} className="flex flex-col">
+                <div className="bg-sub2 rounded-t-lg text-center relative min-w-[226px] aspect-square overflow-auto">
                   <Image
                     src={item.thumbnail || '/notFoundImg'}
                     fill
