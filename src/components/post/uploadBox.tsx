@@ -24,7 +24,6 @@ const getBase64 = (file: RcFile): Promise<string> =>
 const beforeUpload = (file: File): Promise<string> => {
   return new Promise((resolve, reject) => {
     if (file.size > 2 * 1024 * 1024) {
-      console.log(file.size);
       reject('2MB 미만의 사진만 업로드가 가능합니다.');
       message.error('2MB 미만의 사진만 업로드가 가능합니다.');
     } else {
