@@ -1,5 +1,5 @@
 
-import { supabase } from "../../supabase/supabase.config";
+import { supabase } from "../../../supabase/supabase.config";
 
 import type { TablesInsert } from "@/types/supabase";
 
@@ -12,8 +12,8 @@ export const deletePost = async(id :string) => {
   }
 }
 
-export const getPost = async () => {
-  const { data, error } = await supabase.from('post').select(`*`).order('created_at', { ascending: false });
+export const getPosts = async () => {
+  const { data, error } = await supabase.from('post').select('id,created_at,category,title').order('created_at', { ascending: false });
   if (error) {
     console.log(error)
   }

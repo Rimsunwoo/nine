@@ -24,8 +24,8 @@ function page() {
     ['중소기업확인서', 중소기업확인서],
   ];
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex gap-2 flex-col items-center mb-7">
+    <div className="flex flex-col items-center ">
+      <div className="flex gap-2 flex-col items-center mb-7 py-4 px-10 rounded-xl border-[1px] shadow-[2px_1px_4px_0_rgba(53,60,73,0.3)]">
         <div className="relative w-52 h-16">
           <Image src={logo} alt="logo" fill />
         </div>

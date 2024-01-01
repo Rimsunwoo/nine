@@ -2,7 +2,7 @@ import React from 'react';
 
 import {DeleteOutlined} from '@ant-design/icons';
 
-import {deletePost} from '@/api/admin';
+import {deletePost} from '@/app/api/admin';
 
 function DeleteBtn({id, setUpdated}: {id: string; setUpdated: any}) {
   return (
