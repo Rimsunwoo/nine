@@ -6,7 +6,7 @@ import {PlusOutlined} from '@ant-design/icons';
 import {message, Modal, Upload} from 'antd';
 import {v4} from 'uuid';
 
-import {getPostImgUrl, uploadImg} from '@/api/admin';
+import {getPostImgUrl, uploadImg} from '@/app/api/admin';
 
 import type {RcFile, UploadProps} from 'antd/es/upload';
 import type {UploadFile} from 'antd/es/upload/interface';

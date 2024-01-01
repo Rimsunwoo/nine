@@ -6,7 +6,7 @@ const nav = ['Broad Cast', 'CCTV', 'White Board'];
 
 function Sidebar({type}: {type: string}) {
   return (
-    <div className="fixed left-[5%] top-1/2 -translate-y-1/2 h-fit overflow-hidden w-52 max-2xl:hidden ">
+    <div className="fixed left-[7%] top-1/2 -translate-y-1/2 h-fit overflow-hidden w-52 max-2xl:hidden ">
       <nav className="flex flex-col text-center">
         {nav.map((category, index) => {
           return (
