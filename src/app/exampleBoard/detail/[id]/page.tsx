@@ -28,11 +28,11 @@ async function Page({params: {id}}: {params: {id: string}}) {
         </div>
       </div>
       {/* 본문 영역 */}
-      <div className="bg-slate-300 w-full h-40 text-start p-2">{data?.content}</div>
+      <div className="w-full h-40 text-start p-2">{data?.content}</div>
       <div className="flex flex-col gap-10 w-full">
         {data.images?.map((img: any) => {
           return (
-            <div key={img} className="w-full h-[32rem] bg-slate-200">
+            <div key={img}>
               <Image src={img} alt="postImage" width={0} height={0} sizes="100%" style={{width: '100%'}} />
             </div>
           );
