@@ -43,11 +43,11 @@ function CctvDetail({model}: {model: string}) {
                 {curData.info_boxs.map((keyword, i) => {
                   return (
                     <div
-                      className={` rounded-md max-w-18 text-center p-[3px] shadow-[0_7px_5px_0_rgba(53,60,73,0.08)] border-[2px] border-white ${
+                      className={` rounded-md max-w-18 text-center shadow-[0_7px_5px_0_rgba(53,60,73,0.08)] border-[2px] border-white ${
                         i === 0 ? 'bg-sky-500' : 'bg-logo_color'
                       }`}
                       key={keyword}>
-                      <p className=" text-white font-bold text-xl text-center">{keyword}</p>
+                      <p className=" text-white font-bold text-xl text-center px-1">{keyword}</p>
                     </div>
                   );
                 })}
