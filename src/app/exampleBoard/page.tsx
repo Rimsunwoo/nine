@@ -1,4 +1,4 @@
-import React from 'react';
+export const revalidate = 0;
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -21,10 +21,10 @@ async function Page({searchParams}: IPagination) {
         <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 mt-20 gap-x-8 gap-y-1">
           {postPaginationData.data?.map(item => (
             <div className="relative min-w-[280px]" key={item.id}>
-              <Link href={`/exampleBoard/${item.id}`} className="flex flex-col w-72">
+              <Link href={`/exampleBoard/detail/${item.id}`} className="flex flex-col w-72">
                 <div className="bg-sub2 rounded-t-lg text-center relative h-[250px] min-w-[280px] overflow-auto">
                   <Image
-                    src={item.thumbnail}
+                    src={item.thumbnail || '/notFoundImg'}
                     fill
                     style={{
                       objectFit: 'fill',
