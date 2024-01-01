@@ -14,8 +14,8 @@ function CctvDetail({model}: {model: string}) {
   // const curData = CCTVData.find(cctv => cctv.model === model)!;
 
   return (
-    <div className="px-20">
-      <div className="flex flex-col items-center px-20">
+    <div className="p-2">
+      <div className="flex flex-col items-center">
         <div className="text-center w-full pb-4 border-b-[2px] mb-10">
           <h2 className="font-semibold">{curData.title}</h2>
           <div className="flex justify-start w-full">
@@ -27,15 +27,23 @@ function CctvDetail({model}: {model: string}) {
           </div>
           <p className="text-lg">{curData.subtitle}</p>
         </div>
-        <div className="flex flex-col gap-20 my-10 lg:flex-row">
+        <div className="flex flex-col gap-10 my-10 lg:flex-row">
           <div className="p-2 flex flex-col items-center">
-            <div className="w-[400px] h-[400px] relative">
-              <Image className="border-2" src={curData.image} alt={curData.title} fill />
+            <div className="w-[300px] relative">
+              <Image
+                className="border-2"
+                src={curData.image}
+                alt={curData.title}
+                width={0}
+                height={0}
+                sizes="100%"
+                style={{width: '100%'}}
+              />
               <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
                 {curData.info_boxs.map((keyword, i) => {
                   return (
                     <div
-                      className={` rounded-md w-20 text-center p-[3px] shadow-[0_7px_5px_0_rgba(53,60,73,0.08)] border-[2px] border-white ${
+                      className={` rounded-md w-16 text-center p-[3px] shadow-[0_7px_5px_0_rgba(53,60,73,0.08)] border-[2px] border-white ${
                         i === 0 ? 'bg-sky-500' : 'bg-logo_color'
                       }`}
                       key={keyword}>
@@ -70,7 +78,7 @@ function CctvDetail({model}: {model: string}) {
         </div>
         <div className="border-[1px] w-full mt-10 mb-10" />
         <p className="text-3xl my-10">제품 사양</p>
-        <div className="bg-slate-100 p-4">
+        <div className="bg-slate-100">
           <SpecTable tableData={[{specs: curData.specs}]} />
         </div>
       </div>
@@ -92,7 +100,7 @@ const model1 = {
     '5MP QHD IP IR BULLET CAMERA',
     '야간 감시거리 : 40m (@0.0Lux)',
     '적외선 광원 : IR Assy 42EA',
-    '렌즈사양 : 4.3배(2.8~12mm) AF 모터줌 렌즈',
+    '렌즈 사양 : 4.3배(2.8~12mm) AF 모터줌 렌즈',
     '입력 전원 : DC12V, PoE @MAX. 10W With IR On',
     '광학 4.3배 줌 / 디지털 32배 줌',
     '8 프라이버시 마스크',

@@ -42,7 +42,7 @@ function page() {
           </ul>
         </div>
       </div>
-      <ul className="grid grid-cols-1 justify-center gap-10 xl:grid-cols-2 mt-10">
+      <ul className="grid grid-cols-1 justify-center gap-10 sm:grid-cols-2 mt-10 w-full">
         {certification.map((a, i) => (
           <Certification key={i} imgSrc={a[1]} name={a[0]} />
         ))}

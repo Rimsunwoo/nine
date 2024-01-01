@@ -21,12 +21,8 @@ export default function WhiteBoard() {
           카달로그 다운로드
         </a>
       </DownLoadBtn>
-      {whiteBoardCatalog.map((url, i) => {
-        return (
-          <div key={i} className="w-[42rem] h-[59rem] relative">
-            <Image src={url} alt="catalog" fill />
-          </div>
-        );
+      {whiteBoardCatalog.map(url => {
+        return <Image key={url} src={url} alt="catalog" width={0} height={0} sizes="100%" style={{width: '100%'}} />;
       })}
     </div>
   );

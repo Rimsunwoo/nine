@@ -35,6 +35,21 @@ const config: Config = {
         logo_color: '#CA5C75',
         sub_color: 'rgba(218, 121, 161)',
       },
+      keyframes: {
+        upIn: {
+          '0%': { transform: 'translateY(30px)' },
+          '100%': { transform: 'translateY(0px)' },
+        },
+        fadeIn: {
+            from : {
+                opacity: '0'
+            },
+            to : {
+                opacity: '1'
+            }
+
+        },
+      },
     },
   },
   plugins: [],
