@@ -37,7 +37,7 @@ function Header() {
             className={`font-normal p-2 hover:border-b-[2px] border-primary ${
               location.includes('company') && 'border-b-[2px] border-primary'
             }`}>
-            {'기업소개'}
+            {'기업 소개'}
           </h5>
         </Link>
         <DropDown location={location} />
@@ -46,7 +46,7 @@ function Header() {
             className={`font-normal p-2 hover:border-b-[2px] border-primary ${
               location.includes('exampleBoard') && 'border-b-[2px] border-primary'
             }`}>
-            {'설치사례'}
+            {'설치 사례'}
           </h5>
         </Link>
       </div>

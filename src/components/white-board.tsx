@@ -14,8 +14,8 @@ export default function WhiteBoard() {
     'https://postfiles.pstatic.net/MjAyMzEyMjdfMjk2/MDAxNzAzNjU3ODAxMTkw.gtog4wWPxoGxcJDZCEm8sjtKB5Z3eTzi6wMpVNouOzsg.LY1pWwOoYPcyeMcX7F3EUjS-IA-TzVJOzZImYPGcmoUg.JPEG.dlatjsdn205/0008.jpg?type=w966',
   ];
   return (
-    <div className="w-full flex flex-col items-center gap-10">
-      <h3>White Board</h3>
+    <div className="w-full flex flex-col items-center gap-10 lg:px-20">
+      <h2 className="font-semibold">White Board</h2>
       <DownLoadBtn>
         <a href="/나인-전자칠판카달로그.pdf" download>
           카달로그 다운로드

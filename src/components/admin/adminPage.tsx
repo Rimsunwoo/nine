@@ -43,7 +43,7 @@ function AdminPage() {
                     제품 : <span>{post.category}</span>
                   </p>
                   <p className="text-slate-600">
-                    작성일 : <span>{post.created_at.split('.')[0]}</span>
+                    작성일 : <span>{post.created_at.split('.')[0].replace('T', ' ')}</span>
                   </p>
                 </div>
                 <DeleteBtn id={post.id} setUpdated={setUpdated} />
@@ -52,6 +52,7 @@ function AdminPage() {
           })
         ) : (
           <>
+            <Skeleton />
             <Skeleton />
             <Skeleton />
           </>
