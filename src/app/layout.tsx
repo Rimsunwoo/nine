@@ -1,6 +1,7 @@
 import {Montserrat} from 'next/font/google';
 import localFont from 'next/font/local';
 
+import Footer from '@/components/common/footer';
 import Header from '@/components/common/header';
 
 import type {Metadata} from 'next';
@@ -25,10 +26,10 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="ko">
-      <body className={`${myFont.className} ${montserrat.variable}`}>
+      <body className={`${myFont.className} ${montserrat.variable} `}>
         <Header />
-        <div className="w-full md:w-[90%] mx-auto xl:w-[80%] mt-40">{children}</div>
-        {/* <Footer /> */}
+        <div className="w-full max-w-[1300px] mx-auto mt-40 px-4 md:px-10 xl:px-20">{children}</div>
+        <Footer />
       </body>
     </html>
   );

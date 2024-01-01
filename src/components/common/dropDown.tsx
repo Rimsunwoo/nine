@@ -24,7 +24,10 @@ const DropDown = ({location}: {location: string}) => {
   return (
     <Dropdown menu={{items}} placement="bottom">
       <button className={`${location.includes('products') && 'border-b-[2px] border-primary'}`}>
-        <h5 className={`font-normal p-2 border-b-[2px] border-white ${location.includes('products') && 'border-none'}`}>
+        <h5
+          className={`font-normal p-2 border-b-[2px] border-transparent ${
+            location.includes('products') && 'border-none'
+          }`}>
           제품 소개
         </h5>
       </button>
