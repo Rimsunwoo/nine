@@ -8,7 +8,6 @@ import type {Tables} from '@/types/supabase';
 
 async function Page({params: {id}}: {params: {id: string}}) {
   const data: Tables<'post'> = await getPostDetail(id);
-  console.log(id, data);
   if (!data) return;
   return (
     <div className="flex flex-col items-center text-center px-10 gap-10">
