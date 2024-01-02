@@ -6,12 +6,15 @@ import {useRouter} from 'next/navigation';
 interface paginationContollerProps {
   pageParams: number;
   totalPages: number;
+  sortParams: string;
 }
 
-export default function PaginationContoller({pageParams, totalPages}: paginationContollerProps) {
+export default function PaginationContoller({pageParams, totalPages, sortParams}: paginationContollerProps) {
   const router = useRouter();
   const onChangePagination = (page: any) => {
-    router.push(`/exampleBoard/?page=${page}`);
+    router.push(`/exampleBoard?sort=${sortParams}&page=${page}`);
   };
-  return <Pagination defaultCurrent={pageParams} onChange={onChangePagination} total={totalPages} />;
+  return (
+    <Pagination defaultCurrent={pageParams} onChange={onChangePagination} current={pageParams} total={totalPages} />
+  );
 }
