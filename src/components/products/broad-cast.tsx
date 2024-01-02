@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
-import DownLoadBtn from './common/downLoadBtn';
+import BuyLink from './buy-link';
+import DownLoadBtn from '../common/downLoadBtn';
 
 export default function BroadCastPage() {
   const catalog = [
@@ -20,13 +21,25 @@ export default function BroadCastPage() {
     'https://postfiles.pstatic.net/MjAyMzEyMjdfMTc0/MDAxNzAzNjU1ODIzMzQ4.WH96zu9pmrlWy8H-6iaC3V29wYzJgQ-O3Tu-Bl7-3RUg.JVHNsgbLZzQ44i4nm0KK5roTShgs7UmP_RG1LLBDwKUg.JPEG.dlatjsdn205/%EC%A3%BC)%EB%82%98%EC%9D%B8_%EB%B0%A9%EC%86%A1%EC%B9%B4%EB%8B%AC%EB%A1%9C%EA%B7%B8_%EC%B5%9C%EC%A2%85_page-0015.jpg?type=w966',
   ];
   return (
-    <div className="w-full flex flex-col items-center gap-10 lg:px-20">
+    <div className="w-full flex flex-col items-center gap-4 lg:px-20">
       <h2 className="font-semibold">Broad Cast</h2>
-      <DownLoadBtn>
-        <a href="/나인-브로드캐스트카달로그.pdf" download>
-          카달로그 다운로드
-        </a>
-      </DownLoadBtn>
+      <div className="flex gap-10 mt-4">
+        <DownLoadBtn>
+          <a href="/나인-브로드캐스트카달로그.pdf" download>
+            카달로그 다운로드
+          </a>
+        </DownLoadBtn>
+        <BuyLink product="Broad Cast" />
+      </div>
+      <Image
+        src="/나라장터나인배너.png"
+        alt="나라장터나인배너"
+        width={0}
+        height={0}
+        sizes="80%"
+        style={{width: '70%', marginBottom: '1rem'}}
+      />
+      <div className="bg-slate-300 mb-10 w-full h-[2px]" />
       {catalog.map(url => {
         return <Image key={url} src={url} alt="catalog" width={0} height={0} sizes="100%" style={{width: '100%'}} />;
       })}
