@@ -3,11 +3,11 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import DownLoadBtn from './common/downLoadBtn';
 import SpecTable from './specTable';
-import 돔카메라 from '../../public/돔카메라.png';
-import 불렛카메라 from '../../public/불렛카메라.png';
-import 스피드돔카메라 from '../../public/스피드돔.png';
+import 돔카메라 from '../../../public/돔카메라.png';
+import 불렛카메라 from '../../../public/불렛카메라.png';
+import 스피드돔카메라 from '../../../public/스피드돔.png';
+import DownLoadBtn from '../common/downLoadBtn';
 
 function CctvDetail({model}: {model: string}) {
   const curData = model === 'NTB-543X' ? model1 : model === 'NTD-543X' ? model2 : model3;
