@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CctvDetail from '@/components/cctvDetail';
+import CctvDetail from '@/components/products/cctvDetail';
 
 interface Props {
   params: {

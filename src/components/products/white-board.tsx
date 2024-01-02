@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
-import DownLoadBtn from './common/downLoadBtn';
+import BuyLink from './buy-link';
+import DownLoadBtn from '../common/downLoadBtn';
 
 export default function WhiteBoard() {
   const whiteBoardCatalog = [
@@ -14,13 +15,25 @@ export default function WhiteBoard() {
     'https://postfiles.pstatic.net/MjAyMzEyMjdfMjk2/MDAxNzAzNjU3ODAxMTkw.gtog4wWPxoGxcJDZCEm8sjtKB5Z3eTzi6wMpVNouOzsg.LY1pWwOoYPcyeMcX7F3EUjS-IA-TzVJOzZImYPGcmoUg.JPEG.dlatjsdn205/0008.jpg?type=w966',
   ];
   return (
-    <div className="w-full flex flex-col items-center gap-10 lg:px-20">
+    <div className="w-full flex flex-col items-center gap-4 lg:px-20">
       <h2 className="font-semibold">White Board</h2>
-      <DownLoadBtn>
-        <a href="/나인-전자칠판카달로그.pdf" download>
-          카달로그 다운로드
-        </a>
-      </DownLoadBtn>
+      <div className="flex gap-10 mt-4">
+        <DownLoadBtn>
+          <a href="/나인-전자칠판카달로그.pdf" download>
+            카달로그 다운로드
+          </a>
+        </DownLoadBtn>
+        <BuyLink product="White Board" />
+      </div>
+      <Image
+        src="/나라장터나인배너.png"
+        alt="나라장터나인배너"
+        width={0}
+        height={0}
+        sizes="80%"
+        style={{width: '70%', marginBottom: '1rem'}}
+      />
+      <div className="bg-slate-300 mb-10 w-full h-[2px]" />
       {whiteBoardCatalog.map(url => {
         return <Image key={url} src={url} alt="catalog" width={0} height={0} sizes="100%" style={{width: '100%'}} />;
       })}
