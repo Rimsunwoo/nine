@@ -52,7 +52,6 @@ function CctvPage() {
             );
           })}
         </div>
-        b
       </div>
     </div>
   );
