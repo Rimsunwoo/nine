@@ -5,7 +5,7 @@ import React, {useState} from 'react';
 import Link from 'next/link';
 import {useRouter} from 'next/navigation';
 
-import {postPost} from '@/api/admin';
+import {postPost} from '@/app/api/admin';
 import useCheckAdmin from '@/components/admin/useCheckAdmin';
 import SelectBox from '@/components/post/selectBox';
 import UploadBox from '@/components/post/uploadBox';
@@ -53,7 +53,8 @@ function Page() {
     if (error) {
       return;
     }
-    alert('등록이 완료되었습니다.');
+    // alert('등록이 완료되었습니다.');
+    // router.push('/admin');
   };
 
   if (isAdmin === 'loading') {

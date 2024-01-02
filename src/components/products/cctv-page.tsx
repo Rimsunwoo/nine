@@ -3,12 +3,24 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import BuyLink from './buy-link';
 import {CCTV_DATA} from './cctvDetail';
 
 function CctvPage() {
   return (
     <div className="flex flex-col items-center justify-center w-full">
       <h2 className="font-semibold">CCTV</h2>
+      <div className="flex flex-col items-center gap-5 mt-10">
+        <BuyLink product="CCTV" />
+        <Image
+          src="/나라장터나인배너.png"
+          alt="나라장터나인배너"
+          width={0}
+          height={0}
+          sizes="80%"
+          style={{width: '70%'}}
+        />
+      </div>
       <div className="flex gap-10 mt-12 border-t-2 pt-24 w-full justify-center">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 2xl:grid-cols-3 w-full">
           {CCTV_DATA.map(item => {
@@ -40,6 +52,7 @@ function CctvPage() {
             );
           })}
         </div>
+        b
       </div>
     </div>
   );

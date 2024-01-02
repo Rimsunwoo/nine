@@ -3,29 +3,28 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import DownLoadBtn from './common/downLoadBtn';
 import SpecTable from './specTable';
-import 돔카메라 from '../../public/돔카메라.png';
-import 불렛카메라 from '../../public/불렛카메라.png';
-import 스피드돔카메라 from '../../public/스피드돔.png';
+import 돔카메라 from '../../../public/돔카메라.png';
+import 불렛카메라 from '../../../public/불렛카메라.png';
+import 스피드돔카메라 from '../../../public/스피드돔.png';
+import DownLoadBtn from '../common/downLoadBtn';
 
 function CctvDetail({model}: {model: string}) {
   const curData = model === 'NTB-543X' ? model1 : model === 'NTD-543X' ? model2 : model3;
-  // const curData = CCTVData.find(cctv => cctv.model === model)!;
 
   return (
     <>
-      <div className="flex flex-col items-center">
-        <div className="text-center w-full pb-4 border-b-[2px] mb-10">
-          <h2 className="font-semibold">{curData.title}</h2>
+      <div className="flex flex-col items-center mb-60">
+        <div className="text-center w-full pb-4 border-b-[2px] mb-10 relative">
+          <h2 className="font-semibold absolute top-0 left-[50%] -translate-x-[50%]">{curData.title}</h2>
           <div className="flex justify-start w-full">
             <Link
               href={'/products/cctv'}
-              className="rounded-md p-2 px-4 bg-primary text-white w-fit hover:bg-hover_primary">
+              className="rounded-md p-2 px-4 bg-slate-500 text-white w-fit hover:bg-hover_primary">
               ← 목록
             </Link>
           </div>
-          <p className="text-lg">{curData.subtitle}</p>
+          <p className="text-lg mt-10">{curData.subtitle}</p>
         </div>
         <div className="flex flex-col gap-10 my-10 lg:flex-row">
           <div className="p-2 flex flex-col items-center">
@@ -39,15 +38,15 @@ function CctvDetail({model}: {model: string}) {
                 sizes="100%"
                 style={{width: '100%'}}
               />
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
                 {curData.info_boxs.map((keyword, i) => {
                   return (
                     <div
-                      className={` rounded-md max-w-18 text-center p-[3px] shadow-[0_7px_5px_0_rgba(53,60,73,0.08)] border-[2px] border-white ${
+                      className={` rounded-md max-w-18 text-center shadow-[0_7px_5px_0_rgba(53,60,73,0.08)] border-[2px] border-white ${
                         i === 0 ? 'bg-sky-500' : 'bg-logo_color'
                       }`}
                       key={keyword}>
-                      <p className=" text-white font-bold text-xl text-center">{keyword}</p>
+                      <p className=" text-white font-bold text-xl text-center px-[6px]">{keyword}</p>
                     </div>
                   );
                 })}
@@ -81,6 +80,16 @@ function CctvDetail({model}: {model: string}) {
         <div className="bg-slate-100">
           <SpecTable tableData={[{specs: curData.specs}]} />
         </div>
+        <div className="border-[1px] w-full mt-10 mb-10" />
+        <p className="text-3xl my-10">외관도</p>
+        <Image
+          src={curData.drawing}
+          alt={`${curData.title} 외관도`}
+          width={0}
+          height={0}
+          sizes="100%"
+          style={{width: '100%'}}
+        />
       </div>
     </>
   );
@@ -95,6 +104,7 @@ const model1 = {
   model: 'NTB-543X',
   simpleInfo: '5MP, H.265, 2.8~12mm, 광학 4.3배 AF 모터 줌, SONY QHD IP IR BULLET CAMERA',
   image: 불렛카메라,
+  drawing: '/불렛카메라_외관도.png',
   info_boxs: ['5MP', '4.3x', 'IR'],
   point: [
     '5MP QHD IP IR BULLET CAMERA',
@@ -153,6 +163,7 @@ const model2 = {
   model: 'NTD-543X',
   simpleInfo: '5MP, 2.8~12mm AF 모터줌, 1/2.8″ Sony Starvis 네트워크 적외선 돔 카메라',
   image: 돔카메라,
+  drawing: '/돔카메라_외관도.png',
   info_boxs: ['5MP', '4.3x', 'IR'],
   point: [
     'Sony Starvis 1/2.8″ 5.69메가픽셀 CMOS 센서',
@@ -229,6 +240,7 @@ const model3 = {
   model: 'NTPTZ-436X',
   simpleInfo: '4MP , H.265 , 광학 36배 줌 , 1/1.8″ Ultra Low Light HD IP IR PTZ CAMERA',
   image: 스피드돔카메라,
+  drawing: '/스피드돔_외관도.png',
   info_boxs: ['4MP', '36x', '1/1.8"', '350M'],
   point: [
     '4MP, Ultra Low Light HD IP IR PTZ CAMERA',

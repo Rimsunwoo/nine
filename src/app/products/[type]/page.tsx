@@ -1,7 +1,7 @@
-import BroadCastPage from '@/components/broad-cast';
-import CctvPage from '@/components/cctv-page';
+import BroadCastPage from '@/components/products/broad-cast';
+import CctvPage from '@/components/products/cctv-page';
+import WhiteBoard from '@/components/products/white-board';
 import Sidebar from '@/components/sidebar';
-import WhiteBoard from '@/components/white-board';
 
 export interface Props {
   params: {

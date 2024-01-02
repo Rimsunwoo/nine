@@ -5,7 +5,7 @@ import {UploadOutlined} from '@ant-design/icons';
 import {Button, Upload} from 'antd';
 import {v4} from 'uuid';
 
-import {getPostImgUrl, uploadImg} from '@/api/admin';
+import {getPostImgUrl, uploadImg} from '@/app/api/admin';
 
 function UploadThumbnail({setThumbnail}: {setThumbnail: Dispatch<SetStateAction<string>>}) {
   const handleFileUpload = async ({file, onSuccess}: any) => {
