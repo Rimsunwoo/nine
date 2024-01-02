@@ -19,9 +19,9 @@ async function Page({searchParams}: IPagination) {
 
   return (
     <>
-      <SortButton sortParams={sortParams} />
       <div className="flex flex-col items-center mb-20">
-        <h2 className="font-semibold">설치 사례</h2>
+        <h2 className="font-semibold mb-4">설치 사례</h2>
+        <SortButton sortParams={sortParams} />
         <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 mt-16 gap-x-8 gap-y-1 border-t-2 pt-24">
           {data?.length ? (
             data.map(item => (
@@ -55,7 +55,7 @@ async function Page({searchParams}: IPagination) {
               </div>
             ))
           ) : (
-            <span>게시물이 없습니다.</span>
+            <span className="mb-20">게시물이 없습니다.</span>
           )}
         </div>
         <PaginationContoller pageParams={pageParams} totalPages={totalPages} />
