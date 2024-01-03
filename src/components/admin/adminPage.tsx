@@ -5,17 +5,14 @@ import Link from 'next/link';
 
 import {getPosts} from '@/app/api/admin';
 
-import DeleteBtn from './deleteBtn';
-
 function AdminPage() {
   const [data, setData] = useState<any>(null);
-  const [updated, setUpdated] = useState(false);
 
   useEffect(() => {
     (async function () {
       setData(await getPosts());
     })();
-  }, [updated]);
+  }, []);
 
   return (
     <div className="flex flex-col items-center gap-10 px-20">
@@ -29,7 +26,13 @@ function AdminPage() {
       </div>
       <div className="w-full text-xl">[게시글 목록]</div>
       <div className="flex flex-col gap-4 w-full">
-        {data ? (
+        {!data ? (
+          <>
+            <Skeleton />
+            <Skeleton />
+            <Skeleton />
+          </>
+        ) : data.length !== 0 ? (
           data.map((post: any) => {
             return (
               <Link
@@ -47,16 +50,11 @@ function AdminPage() {
                     작성일 : <span>{post.created_at.split('.')[0].replace('T', ' ')}</span>
                   </p>
                 </div>
-                <DeleteBtn id={post.id} setUpdated={setUpdated} />
               </Link>
             );
           })
         ) : (
-          <>
-            <Skeleton />
-            <Skeleton />
-            <Skeleton />
-          </>
+          <div className="text-2xl w-full text-center p-10">아직 등록된 게시물이 없습니다.</div>
         )}
       </div>
     </div>

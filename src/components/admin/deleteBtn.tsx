@@ -1,10 +1,13 @@
+'use client';
 import React from 'react';
 
 import {DeleteOutlined} from '@ant-design/icons';
+import {useRouter} from 'next/navigation';
 
 import {deletePost} from '@/app/api/admin';
 
-function DeleteBtn({id, setUpdated}: {id: string; setUpdated: any}) {
+function DeleteBtn({id}: {id: string}) {
+  const router = useRouter();
   return (
     <DeleteOutlined
       className="absolute bottom-2 right-2 text-2xl hover:scale-110"
@@ -13,7 +16,7 @@ function DeleteBtn({id, setUpdated}: {id: string; setUpdated: any}) {
         if (ischeck) {
           deletePost(id);
           alert('삭제가 완료되었습니다.');
-          setUpdated((prev: boolean) => !prev);
+          router.push('/admin');
         }
       }}
     />

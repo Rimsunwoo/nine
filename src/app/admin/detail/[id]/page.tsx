@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import {getPostDetail} from '@/app/api/getPost';
+import DeleteBtn from '@/components/admin/deleteBtn';
 
 import type {Tables} from '@/types/supabase';
 
@@ -34,6 +35,7 @@ async function Page({params: {id}}: {params: {id: string}}) {
             <div className="p-2 font-bold">작성일</div>
             <div className="p-2">{data.created_at.split('.')[0].replace('T', ' ')}</div>
           </div>
+          <DeleteBtn id={data.id} />
         </div>
       </div>
       {/* 본문 영역 */}

@@ -53,8 +53,8 @@ function Page() {
     if (error) {
       return;
     }
-    // alert('등록이 완료되었습니다.');
-    // router.push('/admin');
+    alert('등록이 완료되었습니다.');
+    router.push('/admin');
   };
 
   if (isAdmin === 'loading') {
