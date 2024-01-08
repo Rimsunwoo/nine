@@ -19,11 +19,11 @@ async function Page({searchParams}: IPagination) {
 
   return (
     <>
-      <div className="flex flex-col items-center mb-20">
+      <div className="flex flex-col items-center mb-20 gap-8">
         <h2 className="font-semibold mb-4">설치 사례</h2>
         <SortButton sortParams={sortParams} />
         {data?.length ? (
-          <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 mt-16 gap-x-8 gap-y-1 border-t-2 pt-24">
+          <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 mt-16 gap-x-8 gap-y-4 border-t-2 pt-24">
             {data.map(item => (
               <div key={item.id} className="relative">
                 <Link href={`/exampleBoard/detail/${item.id}`} className="flex flex-col">
@@ -37,10 +37,12 @@ async function Page({searchParams}: IPagination) {
                       alt="Preview"
                     />
                   </div>
-                  <div className="flex flex-col px-3 py-4 rounded-b-lg min-w-[280px]">
-                    <p className="text-sm opacity-50 ">{new Date(item.created_at).toLocaleDateString()}</p>
+                  <div className="flex flex-col px-3 py-4 rounded-b-lg min-w-[226px] shadow-[3px_4px_4px_0_rgba(53,60,73,0.08)]">
+                    <p className="text-sm opacity-50 ">
+                      {item.created_at.toLocaleString().split('T')[0].replaceAll('-', '. ')}
+                    </p>
                     <p
-                      className="mt-1 w-full text-[18px] font-bold"
+                      className="mt-1 w-full text-lg font-semibold"
                       style={{
                         display: '-webkit-box',
                         WebkitBoxOrient: 'vertical',

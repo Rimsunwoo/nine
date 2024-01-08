@@ -5,12 +5,12 @@ export const getPostPagination = async (pageParams: number, sortParams: string) 
     const startPostNumber = (pageParams - 1) * 8;
     const endPostNumber = pageParams * 8 - 1;
     if (query == "전체") {
-      const { data } = await supabase.from('post').select('*').range(startPostNumber, endPostNumber);
+      const { data } = await supabase.from('post').select('*').range(startPostNumber, endPostNumber).order('created_at', {ascending : false});
       const { count } = await supabase.from('post').select(`id`, { count: 'exact', head: true })
       return {data, count}
     }
     else {
-      const { data } = await supabase.from('post').select('*').eq('category', query).range(startPostNumber, endPostNumber);
+      const { data } = await supabase.from('post').select('*').eq('category', query).range(startPostNumber, endPostNumber).order('created_at', {ascending : false});
       const { count } = await supabase.from('post').select(`id`, { count: 'exact', head: true }).eq('category', query)
       return {data, count}
     }
